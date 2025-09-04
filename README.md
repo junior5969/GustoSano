@@ -2,14 +2,6 @@
 
 **GustoSano** è un'app Angular che permette di esplorare i frutti e visualizzarne i valori nutrizionali in modo semplice e intuitivo.
 
----
-
-## Demo Online
-
-L'app è stata deployata su Firebase e può essere provata qui:  
-[https://gusto-sano-app.web.app](https://gusto-sano-app.web.app)
-
----
 
 ## Descrizione del progetto
 
@@ -21,7 +13,6 @@ L'app è stata deployata su Firebase e può essere provata qui:
 - Visualizzare i valori nutrizionali medi per 100g di ciascun frutto (calorie, proteine, carboidrati, grassi, zuccheri).
 - Navigare tra le diverse sezioni con un’esperienza utente fluida e accessibile.
 
----
 
 ## Struttura del progetto
 
@@ -45,7 +36,6 @@ L'applicazione segue le **best practice di Angular**:
   - `environment.ts` per sviluppo (usa proxy per bypassare CORS).
   - `environment.prod.ts` per produzione (URL API reale).
 
----
 
 ## Principali librerie esterne utilizzate
 
@@ -54,7 +44,6 @@ L'applicazione segue le **best practice di Angular**:
 - `rxjs` → gestione delle chiamate asincrone.  
 - `zone.js` → change detection Angular.  
 
----
 
 ## Istruzioni per configurare il progetto in locale
 
@@ -110,3 +99,24 @@ ng build --configuration production
 ```bash
 firebase deploy
 ```
+
+
+## Demo Online
+
+L'app è stata deployata su Firebase e può essere provata qui:  
+[https://gusto-sano-app.web.app](https://gusto-sano-app.web.app)
+
+
+## Repository GitHub
+
+Visita il codice sorgente su [GitHub](https://github.com/junior5969/GustoSano)
+
+
+## Documentazione 
+
+[Presentazione del progetto (PDF)](./Presentazione.pdf)
+
+
+## Autrice
+
+Barletta Chiara 
