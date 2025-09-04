@@ -24,10 +24,9 @@ L'applicazione segue le **best practice di Angular**:
   - `Fruits`: lista frutti e ricerca.
   - `FruitCard`: scheda singolo frutto con pulsanti azione.
   - `FruitNutritions`: tabella nutrizionale dettagliata.
+   - `Loader`: visualizza un indicatore di caricamento globale mentre i dati vengono caricati dall’API.
 - **Servizi**:
   - `HttpService`: gestione chiamate API, basata su `environment.apiUrl` per supportare sviluppo e produzione.
-  - **Direttiva**: 
-  - `Loader`: visualizza un indicatore di caricamento globale mentre i dati vengono caricati dall’API.
 - **Models**:
   - `Fruit` e `Nutrition` per la tipizzazione TypeScript.
 - **Routing**:

@@ -17,7 +17,7 @@ import { Fruit } from '../../models/interface';
 })
 export class FruitNutritions {
   
-@Input() fruit!: Fruit;
+@Input() fruit?: Fruit;
 
   constructor(private route: ActivatedRoute, private httpService: HttpService) {}
 

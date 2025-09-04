@@ -3,16 +3,16 @@
     <a routerLink="/fruits"><mat-icon>arrow_back</mat-icon></a>
 </div>
 <section>
-<h2>Tabella nutrizionale: {{ fruit.name }}</h2>
+<h2>Tabella nutrizionale: {{ fruit?.name }}</h2>
 
 <div class="list">
   <ul>
     <li class="li-title">Valori medi per 100gr</li>
-    <li class="first"><span>Calorie</span> {{ fruit.nutritions.calories }} kcal</li>
-    <li class="second"><span>Proteine</span> {{ fruit.nutritions.protein }} g</li>
-    <li class="third"><span>Carboidrati</span> {{ fruit.nutritions.carbohydrates }} g</li>
-    <li class="last"><span>Grassi</span> {{ fruit.nutritions.fat }} g</li>
-    <li class="last li-bottom"><span>Zuccheri</span> {{ fruit.nutritions.sugar }} g</li>
+    <li class="first"><span>Calorie</span> {{ fruit?.nutritions?.calories }} kcal</li>
+    <li class="second"><span>Proteine</span> {{ fruit?.nutritions?.protein }} g</li>
+    <li class="third"><span>Carboidrati</span> {{ fruit?.nutritions?.carbohydrates }} g</li>
+    <li class="last"><span>Grassi</span> {{ fruit?.nutritions?.fat }} g</li>
+    <li class="last li-bottom"><span>Zuccheri</span> {{ fruit?.nutritions?.sugar }} g</li>
   </ul>
 </div>
 </section>
