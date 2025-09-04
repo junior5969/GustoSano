@@ -1,0 +1,25 @@
+
+<section>
+
+  <div class="header">
+        <div class="nav">
+          <a routerLink="/homepage"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon></a>
+      </div>
+    <h1>Elenco completo</h1>
+    <div class="input-container">
+      <mat-icon aria-hidden="true">search</mat-icon>
+      <input type="text" placeholder="Cerca un frutto" [(ngModel)]="searchTerm" (ngModelChange)="searchedFruit()"  class="search-input" aria-label="Campo di ricerca frutti">
+    </div>
+  </div>
+
+
+  <div class="fruits-list">
+    @if (displayedFruit && displayedFruit.length > 0) {
+      @for (fruit of displayedFruit; track fruit.name) {
+    <app-fruit-card [fruit]="fruit" (fruitClicked)="viewDetails($event)" [details]="fruitDetails[fruit.name]"></app-fruit-card>
+          }
+    } @else {
+      <p>Nessun frutto trovato</p>
+    }
+  </div>
+</section>

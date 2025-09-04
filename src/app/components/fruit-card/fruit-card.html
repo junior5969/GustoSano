@@ -1,0 +1,23 @@
+
+<mat-card class="example-card" appearance="outlined">
+
+  <mat-card-header>
+    <mat-card-title class="card-title">{{fruit.name}}</mat-card-title>
+</mat-card-header>
+
+<img [src]="getFruitImage(fruit.name)" alt="{{ fruit.name }}" aria-label="Immagine del frutto {{ fruit.name }}">
+
+  <mat-card-actions class="card-button">
+    <button matButton (click)="fruitClicked.emit(fruit.name)" aria-label="Vedi la tassonomia di {{ fruit.name }}">Tassonomia</button>
+    <button matButton [routerLink]="['/fruits', fruit.name]" aria-label="Mostra valori nutrizionali di {{ fruit.name }}">Info nutrizionali</button>
+  </mat-card-actions>
+
+      @if (details){
+  <div class="fruit-details">
+      <p><span>Famiglia:</span> {{ details.family }}</p>
+      <p><span>Genere:</span> {{ details.genus }}</p>
+      <p><span>Ordine:</span> {{ details.order }}</p>
+    </div>
+    }
+
+</mat-card>
