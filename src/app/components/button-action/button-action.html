@@ -1,0 +1,17 @@
+  
+<button mat-button
+        [routerLink]="routerLink"
+        [disabled]="disabled"
+        [attr.aria-label]="ariaLabel || label"
+        (click)="action.emit()"
+        class="app-btn"
+        [ngClass]="[matStyle, customClass]">
+
+  @if (icon) {
+    <mat-icon [attr.aria-hidden]="iconAriaHidden">{{ icon }}</mat-icon>
+  }
+
+  @if (label) {
+    <span>{{ label }}</span>
+  }
+</button>

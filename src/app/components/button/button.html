@@ -1,0 +1,16 @@
+<a
+   [routerLink]="routerLink"
+   [attr.aria-label]="ariaLabel || label"
+   class="app-btn"
+   [ngStyle]="{'font-size': fontSize, 'padding': padding, 'margin-top': marginTop, 'border-radius': borderRadius}"
+   [ngClass]="[matStyle, customClass]"
+   [class.disabled]="disabled">
+
+  @if (icon) {
+    <mat-icon [attr.aria-hidden]="true">{{ icon }}</mat-icon>
+  }
+
+  @if (label) {
+    <span>{{ label }}</span>
+  }
+</a>

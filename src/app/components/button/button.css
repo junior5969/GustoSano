@@ -1,0 +1,17 @@
+
+.a-button {
+    background-color: rgb(100, 14, 100);
+    font-weight:500;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.a-button:hover {
+background-color:rgb(192, 26, 192);
+transform: scale(1.05);
+}
+

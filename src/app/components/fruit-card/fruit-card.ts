@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { Fruit } from '../../models/interface';
+import { ButtonAction} from "../button-action/button-action";
 
 @Component({
   selector: 'app-fruit-card',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, CommonModule, RouterModule, RouterLink],
+  imports: [MatCardModule, MatButtonModule, CommonModule, RouterModule, RouterLink, ButtonAction],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './fruit-card.html',
   styleUrls: ['./fruit-card.css']

@@ -2,36 +2,56 @@ import { HttpService } from '../../service/http-service';
 import { FruitCard } from "../fruit-card/fruit-card";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {Component} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import { Subscription } from 'rxjs';
 import {MatIconModule} from '@angular/material/icon';
 import {RouterModule, RouterLink }  from '@angular/router';
 import { Fruit } from '../../models/interface';
+import { Button } from '../button/button';
 
 @Component({
   selector: 'app-fruits',
   standalone: true,
-  imports: [FruitCard, CommonModule, FormsModule, MatIconModule, RouterModule, RouterLink ],
+  imports: [FruitCard, CommonModule, FormsModule, MatIconModule, RouterModule, RouterLink, Button],
   templateUrl: './fruits.html',
   styleUrls: ['./fruits.css']
 })
-export class Fruits {
+export class Fruits implements OnInit, OnDestroy{
 
-constructor(private httpService:HttpService) {}
 
 searchTerm: string = '';
 displayedFruit: Fruit[] = [];
 
-fruits:Fruit[]=[];
+private subscription?: Subscription;
+errorMessage = '';
+
+fruits: Fruit[] = [];
 fruitName!:string;
 fruitDetails: { [name: string]: Fruit } = {}; // mappa fruitName
 
+constructor(private httpService:HttpService) {}
+
 ngOnInit() {
-  this.httpService.getAllFruits().subscribe((data: Fruit[]) => {
-    this.fruits = data;
-    this.displayedFruit = [...this.fruits]; // inizializzo subito la lista con un array copia di fruits ma indipendente
-    console.log("Frutti caricati:", this.fruits);
+  this.subscription = this.httpService.getAllFruits().subscribe({
+    next: (data: Fruit[]) => {
+      this.fruits = data;
+      this.displayedFruit = [...this.fruits]; // <- qui! serve per visualizzare i frutti
+      console.log('Frutti caricati:', this.fruits);
+    },
+    error: (err) => {
+      console.error('Errore nel caricamento frutti:', err);
+      this.errorMessage = 'Impossibile caricare i frutti. Riprova più tardi.';
+    },
+    complete: () => {
+      console.log('Completato il caricamento frutti.');
+    }
   });
 }
+  ngOnDestroy() {
+    this.subscription?.unsubscribe();
+  }
+
+
 
   viewDetails(fruitName: string) {
     this.httpService.getSingleFruit(fruitName).subscribe((response:Fruit) => {

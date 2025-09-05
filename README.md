@@ -16,15 +16,15 @@
 
 ## Struttura del progetto
 
-L'applicazione segue le **best practice di Angular**:
-
 - **Componenti standalone**:
   - `Homepage`: pagina principale con call-to-action.
   - `Header`: usata nella homepage.
   - `Fruits`: lista frutti e ricerca.
   - `FruitCard`: scheda singolo frutto con pulsanti azione.
   - `FruitNutritions`: tabella nutrizionale dettagliata.
-   - `Loader`:componente globale che mostra uno spinner durante il caricamento dei dati dalle API, integrato in tutte le sezioni con chiamate HTTP asincrone.
+  - `Loader`:componente globale che mostra uno spinner durante il caricamento dei dati dalle API, integrato in tutte le sezioni con chiamate HTTP asincrone.
+  - `Button`: componente riutilizzabile per gestire la navigazione tramite `routerLink`.
+  - `ButtonAction`: componente riutilizzabile per gestire sia navigazione tramite `routerLink` sia azioni tramite `EventEmitter`.
 - **Servizi**:
   - `HttpService`: gestione chiamate API, basata su `environment.apiUrl` per supportare sviluppo e produzione.
   Le chiamate HTTP sono intercettate dal `LoaderInterceptor`, che comunica con `LoaderService` per mostrare/nascondere automaticamente lo spinner durante le richieste.
