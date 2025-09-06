@@ -20,8 +20,9 @@
 img {
     width: 80%;
     max-width: 300px;
-    height: auto;
+    height: 200px;
     margin-bottom: 15px;
+    object-fit: cover;
 }
 
 .card-button {
