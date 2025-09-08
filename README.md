@@ -62,7 +62,7 @@ Per avviare il progetto in locale, segui questi passaggi:
 
 ```bash
 git clone https://github.com/junior5969/GustoSano.git
-cd progetto-corso-angular
+cd GustoSano
 ```
 
 2. **Installa le dipendenze:**
@@ -74,7 +74,7 @@ npm install
 3. **Avvia il server di sviluppo:**
 
 ```bash
-ng serve --proxy-config proxy.conf.json
+ng serve
 ```
 
 4. **Apri l’app nel browser:**
@@ -96,7 +96,11 @@ ng build --configuration production
 
 7. **Deploy su Firebase:**
 
+Per pubblicare l’applicazione su Firebase, dopo aver eseguito la build di produzione:
+
 ```bash
+firebase login
+firebase init
 firebase deploy
 ```
 
