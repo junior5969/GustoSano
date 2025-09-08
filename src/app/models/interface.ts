@@ -8,6 +8,7 @@ export interface Nutrition {
 
 export interface Fruit {
   name: string;
+  id:number;
   family: string;
   genus: string;
   order: string;

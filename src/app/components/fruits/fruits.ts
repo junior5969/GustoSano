@@ -27,7 +27,8 @@ errorMessage = '';
 
 fruits: Fruit[] = [];
 fruitName!:string;
-fruitDetails: { [name: string]: Fruit } = {}; // mappa fruitName
+fruitId!:number;
+fruitDetails: { [id:number]: Fruit } = {}; // mappa fruitName
 
 constructor(private httpService:HttpService) {}
 
@@ -53,12 +54,12 @@ ngOnInit() {
 
 
 
-  viewDetails(fruitName: string) {
-    this.httpService.getSingleFruit(fruitName).subscribe((response:Fruit) => {
-      console.log("Frutto scelto:", fruitName);
+  viewDetails(fruitId:number) {
+    this.httpService.getSingleFruit(fruitId).subscribe((response:Fruit) => {
+      console.log("Frutto scelto:", fruitId);
       console.log("response", response);
-      this.fruitDetails[fruitName] = response; 
-      console.log("Dettagli del frutto:", this.fruitDetails[fruitName]);
+      this.fruitDetails[fruitId] = response; 
+      console.log("Dettagli del frutto:", this.fruitDetails[fruitId]);
     });
   }
 
@@ -76,4 +77,7 @@ searchedFruit(): void {
   console.log("Termine cercato:", this.searchTerm);
   console.log("Risultati:", this.displayedFruit);
 }
+  trackById(index: number, fruit: Fruit): number {
+    return fruit.id;
+  }
 }

@@ -19,7 +19,7 @@ export class FruitCard {
 
 @Input() fruit!: Fruit;
 @Input() details?: Fruit;
-@Output() fruitClicked = new EventEmitter<string>();
+@Output() fruitClicked = new EventEmitter<number>();
 
 
 getFruitImage(fruitName: string | undefined): string {

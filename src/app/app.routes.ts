@@ -10,7 +10,7 @@ export const routes: Routes = [
     {path: '', pathMatch: 'full', redirectTo: '/homepage'}, //percorso vuoto (localhost:4200/) reindirizza a homepage
     {path: 'homepage', component: Homepage},
     {path: 'fruits', component: Fruits},
-    { path: 'fruits/:name', component: FruitNutritions},
+    { path: 'fruits/:id', component: FruitNutritions},
     {path: '404', component: Notfound},
     {path: '**', redirectTo: '/404'},  //per qualsiasi altra rotta non definita, reindirizza a not found 404
 ];

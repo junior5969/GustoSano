@@ -20,8 +20,8 @@ getAllFruits(): Observable<Fruit[]> {
 }
 
 
-getSingleFruit(name:string): Observable<Fruit> {
-  return this.http.get<Fruit>(`${this.baseUrl}/${name}`);
+getSingleFruit(id:number): Observable<Fruit> {
+  return this.http.get<Fruit>(`${this.baseUrl}/${id}`);
 }
 
 }

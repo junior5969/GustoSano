@@ -8,8 +8,8 @@
 <img [src]="getFruitImage(fruit.name)" alt="{{ fruit.name }}" aria-label="Immagine del frutto {{ fruit.name }}">
 
   <mat-card-actions class="card-button">
-    <app-button-action (action)="fruitClicked.emit(fruit.name)" label="Tassonomia" ariaLabel="Vedi la tassonomia di {{ fruit.name }}" customClass="button-card"></app-button-action>
-    <app-button-action [routerLink]="['/fruits', fruit.name]" label="Info nutrizionali" ariaLabel="Mostra valori nutrizionali di {{ fruit.name }}" customClass="button-card"></app-button-action>
+    <app-button-action (action)="fruitClicked.emit(fruit.id)" label="Tassonomia" ariaLabel="Vedi la tassonomia di {{ fruit.name }}" customClass="button-card"></app-button-action>
+    <app-button-action [routerLink]="['/fruits', fruit.id]" label="Info nutrizionali" ariaLabel="Mostra valori nutrizionali di {{ fruit.name }}" customClass="button-card"></app-button-action>
   </mat-card-actions>
 
       @if (details){

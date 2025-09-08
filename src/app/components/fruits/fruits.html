@@ -14,9 +14,9 @@
 
 
   <div class="fruits-list">
-    @if (displayedFruit && displayedFruit.length > 0) {
-      @for (fruit of displayedFruit; track fruit.name) {
-    <app-fruit-card [fruit]="fruit" (fruitClicked)="viewDetails($event)" [details]="fruitDetails[fruit.name]"></app-fruit-card>
+  @if (displayedFruit && displayedFruit.length > 0) {
+    @for (fruit of displayedFruit; track fruit.id) {
+    <app-fruit-card [fruit]="fruit" (fruitClicked)="viewDetails($event)" [details]="fruitDetails[fruit.id]"></app-fruit-card>
           }
     } @else {
       <p>Nessun frutto trovato</p>

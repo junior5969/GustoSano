@@ -20,15 +20,18 @@ export class FruitNutritions implements OnInit, OnDestroy {
   
   fruit?: Fruit;
   errorMessage = '';
+  id?:Fruit;
 
   private subscription?: Subscription;
 
   constructor(private route: ActivatedRoute, private httpService: HttpService) {}
 
  ngOnInit() {
-    const name = this.route.snapshot.paramMap.get('name');
-    if (name) {
-      this.subscription = this.httpService.getSingleFruit(name).subscribe({
+      const idParam = this.route.snapshot.paramMap.get('id');
+      console.log(idParam);
+    const id = idParam ? +idParam : null;
+     if (id !== null) {
+      this.subscription = this.httpService.getSingleFruit(id).subscribe({
         next: (data: Fruit) => {
           this.fruit = data;
           console.log('Frutto caricato:', this.fruit);

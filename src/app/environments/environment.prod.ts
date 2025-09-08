@@ -3,5 +3,5 @@
 
 export const environment = {
   production: true,
-  apiUrl: '/api'
+  apiUrl: 'https://www.fruityvice.com/api'  // URL reale dell’API
 };
