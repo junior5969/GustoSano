@@ -7,10 +7,6 @@
       "**/node_modules/**"
     ],
     "rewrites": [
-    {
-        "source": "/api/**",
-        "destination": "https://www.fruityvice.com/api/**"
-      },
       {
         "source": "**",
         "destination": "/index.html"
