@@ -1,12 +1,12 @@
 {
   "hosting": {
     "public":"dist/progetto-corso-angular/browser",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
+      {
+        "source": "/api/**",
+        "function": "getFruits"
+      },
       {
         "source": "**",
         "destination": "/index.html"

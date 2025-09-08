@@ -28,6 +28,9 @@
     "@angular/material": "^20.2.1",
     "@angular/platform-browser": "^20.1.0",
     "@angular/router": "^20.1.0",
+    "firebase-admin": "^13.5.0",
+    "firebase-functions": "^6.4.0",
+    "node-fetch": "^2.7.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -44,5 +47,18 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.8.2"
-  }
+  },
+  "description": "**GustoSano** è un'app Angular che permette di esplorare i frutti e visualizzarne i valori nutrizionali in modo semplice e intuitivo.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junior5969/GustoSano.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/junior5969/GustoSano/issues"
+  },
+  "homepage": "https://github.com/junior5969/GustoSano#readme"
 }
