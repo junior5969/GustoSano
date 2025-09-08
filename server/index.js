@@ -1,3 +1,4 @@
+// server/index.js
 const express = require("express");
 const fetch = require("node-fetch");
 const cors = require("cors");
@@ -5,7 +6,13 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors()); // abilita tutte le origini
+// Abilita CORS per tutte le origini
+app.use(cors());
+
+// Rotta di test per verificare che il server sia attivo
+app.get("/", (req, res) => {
+  res.send("Server GustoSano attivo");
+});
 
 // Tutti i frutti
 app.get("/fruit/all", async (req, res) => {
@@ -30,6 +37,7 @@ app.get("/fruit/:name", async (req, res) => {
   }
 });
 
+// Avvio del server
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`✅ Server GustoSano avviato su porta ${PORT}`);
 });
