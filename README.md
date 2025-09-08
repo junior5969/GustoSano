@@ -33,8 +33,10 @@
 - **Routing**:
   - Implementato tramite `RouterModule` con gestione 404.
 - **Environments**:
-  - `environment.ts` per sviluppo (usa proxy per bypassare CORS).
-  - `environment.prod.ts` per produzione (URL API reale).
+  - `environment.ts` per sviluppo.
+  - `environment.prod.ts` per produzione.
+- **Server Backend**:
+  - `server/index.js` server Express hostato su Render, che funge da proxy verso l’API esterna Fruityvice.
 
 
 ## Principali librerie esterne utilizzate
@@ -42,8 +44,11 @@
 - `@angular/material` → componenti UI (Card, Button, Icon).  
 - `@angular/cdk` → supporto Material e funzionalità aggiuntive.  
 - `rxjs` → gestione delle chiamate asincrone.  
-- `zone.js` → change detection Angular.  
-
+- `zone.js` → change detection Angular.
+- `express`(server Render) → backend per proxy API.
+- `node-fetch` → fetch verso API esterne.
+- `cors` → gestione delle richieste cross-origin
+ 
 
 ## Istruzioni per configurare il progetto in locale
 
@@ -94,9 +99,44 @@ ng build
 ng build --configuration production
 ```
 
-7. **Deploy su Firebase:**
+## Backend Express (server locale) 
 
-Per pubblicare l’applicazione su Firebase, dopo aver eseguito la build di produzione:
+7. **Vai nella cartella `server`**
+
+```bash
+cd server
+```
+
+8. **Installa le dipendenze:**
+
+```bash
+npm install
+```
+
+9. **Avvia il server:**
+
+```bash
+node index.js
+```
+
+## Deploy su Render
+
+10. **Commit e push della cartella `server` su GitHub**
+
+11. **Crea un nuovo Web Service su Render:**
+
+Build command:
+```bash
+npm install
+```
+Start command:
+```bash
+node index.js
+```
+
+Fai **Manual Deploy** del commit più recente.
+
+12. **Deploy su Firebase:**
 
 ```bash
 firebase login
@@ -109,6 +149,10 @@ firebase deploy
 
 L'app è stata deployata su Firebase e può essere provata qui:  
 [https://gusto-sano-app.web.app](https://gusto-sano-app.web.app)
+
+
+## Backend Render
+[https://gustosano.onrender.com/](https://gustosano.onrender.com/)
 
 
 ## Repository GitHub
