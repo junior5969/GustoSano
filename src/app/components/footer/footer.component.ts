@@ -5,10 +5,10 @@ import { CommonModule } from '@angular/common';
   selector: 'app-footer',
   standalone:true,
   imports: [CommonModule],
-  templateUrl: './footer.html',
-  styleUrls: ['./footer.css']
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.css']
 })
-export class Footer {
+export class FooterComponent {
 
 
   imageSources = [

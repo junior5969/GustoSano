@@ -6,17 +6,17 @@ import { ActivatedRoute, RouterModule, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { HttpService } from '../../service/http-service';
 import { Fruit } from '../../models/interface';
-import { Button } from "../button/button";
+import { ButtonComponent } from "../button/button.component";
 
 
 @Component({
   selector: 'app-fruit-nutritions',
   standalone: true,
-  imports: [CommonModule, MatTableModule, RouterModule, RouterLink, MatIconModule, Button],
-  templateUrl: './fruit-nutritions.html',
-  styleUrls: ['./fruit-nutritions.css']
+  imports: [CommonModule, MatTableModule, RouterModule, RouterLink, MatIconModule, ButtonComponent],
+  templateUrl: './fruit-nutritions.component.html',
+  styleUrls: ['./fruit-nutritions.component.css']
 })
-export class FruitNutritions implements OnInit, OnDestroy {
+export class FruitNutritionsComponent implements OnInit, OnDestroy {
   
   fruit?: Fruit;
   errorMessage = '';

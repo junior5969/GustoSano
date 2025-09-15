@@ -9,10 +9,10 @@ import {MatButtonModule} from '@angular/material/button';
   selector: 'app-button',
   standalone:true,
   imports: [CommonModule, RouterLink, RouterModule, MatIconModule, MatButtonModule],
-  templateUrl: './button.html',
-  styleUrls: ['./button.css']
+  templateUrl: './button.component.html',
+  styleUrls: ['./button.component.css']
 })
-export class Button {
+export class ButtonComponent {
 
   @Input() label?: string;                       // Testo del bottone
   @Input() icon?: string;                        // Icona material 

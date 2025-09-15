@@ -8,10 +8,10 @@ import { MatButtonModule } from '@angular/material/button';
   selector: 'app-button-action',
   standalone:true,
   imports: [CommonModule, RouterModule, MatIcon, MatButtonModule, RouterLink ],
-  templateUrl: './button-action.html',
-  styleUrls: ['./button-action.css']
+  templateUrl: './button-action.component.html',
+  styleUrls: ['./button-action.component.css']
 })
-export class ButtonAction {
+export class ButtonActionComponent {
 
   @Input() label?: string;
   @Input() icon?: string;

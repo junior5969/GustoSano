@@ -1,5 +1,5 @@
 import { HttpService } from '../../service/http-service';
-import { FruitCard } from "../fruit-card/fruit-card";
+import { FruitCardComponent } from "../fruit-card/fruit-card.component";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {Component, OnInit, OnDestroy} from '@angular/core';
@@ -7,16 +7,16 @@ import { Subscription } from 'rxjs';
 import {MatIconModule} from '@angular/material/icon';
 import {RouterModule, RouterLink }  from '@angular/router';
 import { Fruit } from '../../models/interface';
-import { Button } from '../button/button';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-fruits',
   standalone: true,
-  imports: [FruitCard, CommonModule, FormsModule, MatIconModule, RouterModule, RouterLink, Button],
-  templateUrl: './fruits.html',
-  styleUrls: ['./fruits.css']
+  imports: [FruitCardComponent, CommonModule, FormsModule, MatIconModule, RouterModule, RouterLink, ButtonComponent],
+  templateUrl: './fruits.component.html',
+  styleUrls: ['./fruits.component.css']
 })
-export class Fruits implements OnInit, OnDestroy{
+export class FruitsComponent implements OnInit, OnDestroy{
 
 
 searchTerm: string = '';

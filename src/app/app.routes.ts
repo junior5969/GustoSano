@@ -1,16 +1,16 @@
 import { Routes } from '@angular/router';
-import { Homepage } from './components/homepage/homepage';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
-import { Fruits} from './components/fruits/fruits';
-import { Notfound } from './components/notfound/notfound';
-import { FruitNutritions } from './components/fruit-nutritions/fruit-nutritions';
+import { FruitsComponent} from './components/fruits/fruits.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { FruitNutritionsComponent } from './components/fruit-nutritions/fruit-nutritions.component';
 
     
 export const routes: Routes = [
     {path: '', pathMatch: 'full', redirectTo: '/homepage'}, //percorso vuoto (localhost:4200/) reindirizza a homepage
-    {path: 'homepage', component: Homepage},
-    {path: 'fruits', component: Fruits},
-    { path: 'fruits/:id', component: FruitNutritions},
-    {path: '404', component: Notfound},
+    {path: 'homepage', component: HomepageComponent},
+    {path: 'fruits', component: FruitsComponent},
+    { path: 'fruits/:id', component: FruitNutritionsComponent},
+    {path: '404', component: NotfoundComponent},
     {path: '**', redirectTo: '/404'},  //per qualsiasi altra rotta non definita, reindirizza a not found 404
 ];
